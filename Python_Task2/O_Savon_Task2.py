@@ -11,8 +11,8 @@ intercom = Client(personal_access_token='my_personal_access_token')
 import msql.connector
 
 config = {
-	'user': 'root',
-	'password': '',
+	'user': 'user',
+	'password': 'password',
 	'host': '127.0.0.1',
 	'database': 'users',
 	'raise_on_warnings': True,
@@ -28,3 +28,5 @@ for (id,name,email) in cursor:
 	print(id,name,email)
 	user = intercom.users.create(id=id, name=name, email=email)
 	intercom.users.save(user)
+
+cnx.close()
